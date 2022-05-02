@@ -2,14 +2,14 @@
 
 int main()
 {
-    setCodeEnvironment(TEST);
-    alertInCelcius(400.5);
+    int alertFailureCount = ZERO;
+    alertInCelcius(400.5, alertFailureCount, networkAlertStub);
     assert(alertFailureCount == 1);
-    alertInCelcius(303.6);
+    alertInCelcius(303.6, alertFailureCount, networkAlertStub);
     assert(alertFailureCount == 2);
-    alertInCelcius(250.9);
+    alertInCelcius(250.9, alertFailureCount, networkAlertStub);
     assert(alertFailureCount == 2);
-    alertInCelcius(201.1);
+    alertInCelcius(201.1, alertFailureCount, networkAlertStub);
     assert(alertFailureCount == 2);
     std::cout << alertFailureCount << " alerts failed.\n";
     std::cout << "All is well (maybe!)\n";
