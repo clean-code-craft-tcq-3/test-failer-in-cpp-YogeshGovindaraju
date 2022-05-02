@@ -1,6 +1,8 @@
 #ifndef MISALIGNEDTEST
 #define MISALIGNEDTEST
 
+#include <assert.h>
+
 void testColorPairValues(ColorPair &colorPair)
 {
     assert(colorPair.number.at(0) == "1");
