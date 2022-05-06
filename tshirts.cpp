@@ -8,7 +8,7 @@ char getSizeName(int centimeter)
     {
         sizeName = 'S';
     }
-    else if(centimeter > 38 && centimeter <= 42)
+    else if(centimeter <= 42)
     {
         sizeName = 'M';
     }
