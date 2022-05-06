@@ -18,12 +18,14 @@ int printColorMap(ColorPair &colorPair, ColorPair &colorPairAlignment)
 {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
+    int numberOfMajorColors = sizeof(majorColor) / sizeof(majorColor[0]);
+    int numberOfMinorColors = sizeof(minorColor) / sizeof(minorColor[0]);
     std::stringstream pairNumberBuffer, majorColorBuffer, minorColorBuffer;
     int i = 0, j = 0;
     std::string pairNumber;
-    for(i = 0; i < 5; i++)
+    for(i = 0; i < numberOfMajorColors; i++)
     {
-        for(j = 0; j < 5; j++)
+        for(j = 0; j < numberOfMinorColors; j++)
         {
             pairNumber = std::to_string(i * 5 + j + 1);
             pairNumberBuffer << std::setw(10) << pairNumber ;
