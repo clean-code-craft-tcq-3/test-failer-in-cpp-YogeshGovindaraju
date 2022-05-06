@@ -1,6 +1,8 @@
 #ifndef MISALIGNEDTEST
 #define MISALIGNEDTEST
 
+#define MAXIMUMCOLORPAIRS 25
+
 #include <assert.h>
 
 void testColorPairValues(ColorPair &colorPair)
@@ -19,13 +21,10 @@ void testColorPairValues(ColorPair &colorPair)
 void testColorMapAlignment(ColorPair &colorPairAlignment)
 {
     int i = 0, j = 0;
-    for(i = 0; i < 25; i++)
+    for(j = 0; j < MAXIMUMCOLORPAIRS; j++)
     {
-        for(j = 0; j < 25; j++)
-        {
-            assert((colorPairAlignment.number.at(i).size()) == (colorPairAlignment.number.at(j).size()));
-            assert((colorPairAlignment.majorColorList.at(i).size()) == (colorPairAlignment.majorColorList.at(j).size()));
-        }
+        assert((colorPairAlignment.number.at(i).size()) == (colorPairAlignment.number.at(j).size()));
+        assert((colorPairAlignment.majorColorList.at(i).size()) == (colorPairAlignment.majorColorList.at(j).size()));
     }
 }
 
